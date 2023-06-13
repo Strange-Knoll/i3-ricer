@@ -1,0 +1,16 @@
+[package]
+name = "fried-rice"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+eframe = "0.22.0"
+egui = "0.22.0"
+env_logger = "0.10.0"
+hex = "0.4.3"
+image = "0.24.6"
+rand = "0.8.5"
+relative-path = "1.8.0"
+serde = "1.0.164"
