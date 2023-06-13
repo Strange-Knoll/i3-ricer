@@ -29,15 +29,13 @@ fn main() -> Result<(), eframe::Error>{
 
 struct Rice{
     save_path:String,
-    wallpaper:Wallpaper,
     theme:Theme,
 }
 
 impl Default for Rice {
     fn default() -> Self {
         Self{
-            save_path:"/home/gravel/.config/i3/config/RICE/debug.txt".to_owned(),
-            wallpaper:Wallpaper::new("/home/gravel/Pictures/Wallpapers/B.jpg".to_owned()),
+            save_path:"ABSOLUTE PATH".to_owned(),
             theme:Theme::default(),
         }
     }
@@ -78,7 +76,7 @@ impl eframe::App for Rice{
                 ui.text_edit_singleline(&mut self.theme.wallpaper.path)
                     .on_hover_text("This path must be absolute !");
                 if ui.button("Apply").clicked(){
-                    self.wallpaper = Wallpaper::new(self.theme.wallpaper.path.clone());
+                    self.theme.wallpaper = Wallpaper::new(self.theme.wallpaper.path.clone());
                 }
 
             });
@@ -124,7 +122,7 @@ impl eframe::App for Rice{
         )
         .show(ctx, |ui|{
             //show bg image
-            self.wallpaper.ui(ui);
+            self.theme.wallpaper.ui(ui);
         });
     }
 }

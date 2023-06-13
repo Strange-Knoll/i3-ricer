@@ -69,7 +69,7 @@ pub struct Theme{
 impl Default for Theme{
     fn default() -> Self{
         Self{
-            wallpaper:Wallpaper::new("".to_string()),
+            wallpaper:Wallpaper::new("ABSOLUTE PATH".to_string()),
 
             border:4.0,
             gaps:0.0,
